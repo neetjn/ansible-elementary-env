@@ -1,0 +1,178 @@
+- name: Check if ssh key exists
+  stat:
+    path: "{{ssh_directory}}/git"
+  register: git_ssh_key_exists
+
+- name: Generate ssh key for git
+  shell: |
+    ssh-keygen -t rsa -C "{{git_ssh_key_user}}" -f "{{ssh_directory}}/git" -N ''
+  become: False
+  when: git_ssh_key_exists.stat.exists == False
+
+- name: Install Python development libs
+  apt:
+    name: python-dev
+    state: present
+
+- name: Install Python (3.6) development libs
+  apt:
+    name: python3.6-dev
+    state: present
+
+- name: Install pylint cli and tools
+  pip:
+    name: pylint
+    state: present
+
+- name: Install httpie cli
+  pip:
+    name: httpie
+    state: present
+
+- name: Install AWS cli
+  pip:
+    name: awscli
+    version: 1.11.130
+    state: present
+
+- name: Check Docker Installed
+  shell: which docker
+  register: docker_check
+  ignore_errors: True
+
+# will install the latest version of docker
+- name: Install Docker
+  shell: curl https://get.docker.com/ | sh
+  when: docker_check.rc == 1
+
+# https://github.com/ansible/ansible/issues/20492#issuecomment-274081101
+- name: Install docker compose
+  pip:
+    name: docker-compose
+    version: 1.9.0
+    state: present
+
+- name: Install Twine
+  pip:
+    name: twine
+    state: present
+
+- name: Install Sphinx
+  pip:
+    name: sphinx
+    state: present
+
+- name: Install n node.js version manager
+  npm:
+    name: n
+    global: yes
+    state: present
+
+- name: Install node.js 8 stable
+  shell: n 8
+
+- name: Install coffee-script
+  npm:
+    name: coffee-script
+    global: yes
+    state: present
+
+- name: Install webpack
+  npm:
+    name: webpack
+    global: yes
+    state: present
+
+- name: Install ruby
+  apt:
+    name: ruby
+    state: present
+
+- name: Install ruby development tools
+  apt:
+    name: ruby-dev
+    state: present
+
+- name: Install travis-cli
+  gem:
+    name: travis-cli
+    state: present
+
+# check if mongodb-compass installed
+- name: Check mongodb compass Installed
+  shell: which mongodb-compass
+  register: compass_check
+  ignore_errors: True
+
+- name: Install mongodb compass
+  shell: |
+    wget -O /tmp/compass.deb https://downloads.mongodb.com/compass/mongodb-compass_1.11.1_amd64.deb
+    dpkg --install /tmp/compass.deb
+    rm -rf /tmp/compass.deb
+  when: compass_check.rc == 1
+
+  # check if sqlectron installed
+- name: Check sqlectron Installed
+  shell: which sqlectron
+  register: sqlectron_check
+  ignore_errors: True
+
+- name: Install sqlectron
+  shell: |
+    wget -O /tmp/sqlectron.deb https://github.com/sqlectron/sqlectron-gui/releases/download/v1.29.0/Sqlectron_1.29.0_amd64.deb
+    dpkg --install /tmp/sqlectron.deb
+    rm -rf /tmp/sqlectron.deb
+  when: sqlectron_check.rc == 1
+
+# check if vscode installed
+- name: Check VSCode Installed
+  shell: which code
+  register: code_check
+  ignore_errors: True
+
+# will install the latest version of vscode
+- name: Install Code
+  shell: |
+    wget -O /tmp/code.deb https://go.microsoft.com/fwlink/?LinkID=760868
+    dpkg --install /tmp/code.deb
+    rm -rf /tmp/code.deb
+  when: code_check.rc == 1
+
+# will install vscode extensions
+- name: Install Code Extensions
+  shell: |
+    code --install-extension ms-python.python
+    code --install-extension EditorConfig.EditorConfig
+    code --install-extension abusaidm.html-snippets
+    code --install-extension arcticicestudio.nord-visual-studio-code
+    code --install-extension christian-kohler.npm-intellisense
+    code --install-extension christian-kohler.path-intellisense
+    code --install-extension crisward.riot-tag
+    code --install-extension dbaeumer.vscode-eslint
+    code --install-extension dzannotti.vscode-babel-coloring
+    code --install-extension eg2.vscode-npm-script
+    code --install-extension PKief.material-icon-theme
+    code --install-extension formulahendry.terminal
+    code --install-extension gerane.Theme-azure
+    code --install-extension hnw.vscode-auto-open-markdown-preview
+    code --install-extension jasonnutter.search-node-modules
+    code --install-extension liuji-jim.vue
+    code --install-extension marcostazi.VS-code-vagrantfile
+    code --install-extension octref.vetur
+    code --install-extension waderyan.nodejs-extension-pack
+    code --install-extension xabikos.JavaScriptSnippets
+    code --install-extension zhuangtongfa.Material-theme
+    code --install-extension dracula-theme.theme-dracula
+    code --install-extension Equinusocio.vsc-material-theme
+    code --install-extension alireza94.theme-gotham
+    code --install-extension raashida.fixthecode-vs
+    code --install-extension gerane.theme-artschool
+    code --install-extension lextudio.restructuredtext
+    code --install-extension loiane.ts-extension-pack
+    code --install-extension wesbos.theme-cobalt2
+    code --install-extension josef.rouge-theme
+    code --install-extension eamodio.gitlens
+    code --install-extension formulahendry.auto-close-tag
+    code --install-extension wayou.vscode-todo-highlight
+  become: False
+  ignore_errors: True
