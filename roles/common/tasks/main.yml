@@ -52,7 +52,7 @@
 # https://github.com/gyazo/Gyazo-for-Linux
 - name: Install Gyazo
   shell: |
-    curl -s https://packagecloud.io/install/repositories/gyazo/gyazo-for-linux/script.deb.sh | sudo bash
+    curl -s https://packagecloud.io/install/repositories/gyazo/gyazo-for-linux/script.deb.sh | sudo os=ubuntu dist=xenial bash
     apt-get install gyazo -y
   when: gyazo_check.rc == 1
 
@@ -60,6 +60,9 @@
   apt:
     name: snapd
     state: present
+
+- name: Install Libreoffice
+  shell: snap install libreoffice
 
 - name: Install i3
   apt:
@@ -89,4 +92,4 @@
   synchronize:
     src: /tmp/dotfiles
     dest: "{{home_directory}}"
-    owner: "{{host_username}}"
+    recursive: true

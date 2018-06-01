@@ -9,9 +9,20 @@
   become: False
   when: git_ssh_key_exists.stat.exists == False
 
+- name: Add deadsnakes ppa for python utilities
+  apt_repository:
+    validate_certs: no
+    repo: ppa:deadsnakes/ppa
+    state: present
+
 - name: Install pip python package manager
   apt:
     name: python-pip
+    state: present
+
+- name: Install pip for python 3
+  apt:
+    name: python3-pip
     state: present
 
 - name: Install Python development libs
@@ -107,19 +118,10 @@
 - name: Install datagrip
   shell: snap install datagrip --classic
 
-# check if vscode installed
-- name: Check VSCode Installed
-  shell: which code
-  register: code_check
-  ignore_errors: True
-
-# will install the latest version of vscode
 - name: Install Code
-  shell: |
-    wget -O /tmp/code.deb https://go.microsoft.com/fwlink/?LinkID=760868
-    dpkg --install /tmp/code.deb
-    rm -rf /tmp/code.deb
-  when: code_check.rc == 1
+  apt:
+    name: code
+    state: present
 
 # will install vscode extensions
 - name: Install Code Extensions
