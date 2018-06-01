@@ -69,6 +69,11 @@
     name: i3
     state: present
 
+- name: Install i3blocks
+  apt:
+    name: i3blocks
+    state: present
+
 - name: Install nitogren
   apt:
     name: nitrogen
@@ -107,3 +112,9 @@
     cp -r /tmp/dotfiles/* "{{home_directory}}"
     cp -r /tmp/dotfiles/.* "{{home_directory}}"
   ignore_errors: yes
+
+- name: Adding ppa for GetDeb Apps
+  shell: |
+    wget -q -O - http://archive.getdeb.net/getdeb-archive.key | sudo apt-key add -
+    sh -c 'echo "deb http://archive.getdeb.net/ubuntu zesty-getdeb apps" >> /etc/apt/sources.list.d/getdeb.list'
+    apt-get update
