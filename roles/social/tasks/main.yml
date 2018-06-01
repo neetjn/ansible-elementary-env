@@ -1,14 +1,5 @@
-- name: Check Skype installed
-  shell: which skypeforlinux
-  register: skype_check
-  ignore_errors: True
-
 - name: Install Skype
-  shell: |
-    wget -O skype.deb "https://repo.skype.com/latest/skypeforlinux-$(echo `getconf LONG_BIT`).deb"
-    dpkg --install skype.deb
-    rm -rf skype.deb
-  when: skype_check.rc == 1
+  shell: snap install skype --classic
 
 - name: Check Teamviewer installed
   shell: which teamviewer
