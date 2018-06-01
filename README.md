@@ -1,20 +1,24 @@
-# ansible-plays-john
+# ansible-plays-elementary
 
-Ansible playbook to install personal tools required for my workspace, and setup my development environment.
-
-This project is a sub-project of the [JVM Development Environment](https://github.com/neetVeritas/jvm-development-environment), but will work with any 64 bit Ubuntu based distribution using Trusty or Xenial.
+Ansible playbook to install personal tools required for my workspace, and setup my development environment on Elementary OS.
 
 The playbook has been broken up into four individual role groups:
 
 #### Common
 
-* Install file-roller (archive manager).
 * Install nano (terminal text editor).
 * Install curl (cli http tool).
 * Install httpie (cli http tool).
 * Install gedit (gui text editor).
 * Install vlc media player (media management).
 * Install gyazo screen capture.
+* Install zsh shell.
+* Install libreoffice suite.
+* Install redshift.
+* Install snapd.
+* Install i3 environment (with i3blocks).
+* Install nitrogen.
+* Install elementary tweaks.
 
 #### Development
 
@@ -25,18 +29,20 @@ The playbook has been broken up into four individual role groups:
 * Install docker-compose.
 * Install vscode.
 * Install pylint.
-* Install twine (pypi package manager).
-* Install sphinx (docs generator).
-* Install node.js 8 stable (using n tool).
+* Install pip2/pip3.
+* Install python development tools.
+* Install httpie.
+* Install node.js stable (using n tool).
 * Install coffeescript.
 * Install webpack.
 * Install ruby.
 * Install travis-cli.
+* Install datagrip.
 
 #### Aesthetics
 
 * Install Oranchelo icon theme.
-* Copy wallpaper to user backgrounds directory.
+* Install numix gtk theme.
 
 #### Social
 
@@ -62,14 +68,5 @@ cd ansible-plays-john
 ansible-playbook playbook.yml
 ```
 
-## Contributing
-
-Contributing guidelines are as follows,
-
-* Any new bugs or features must have a parent task/issue associated them them.
-    * Branches for bugs and features should be structured like so, `issue-x-username`.
-* Before putting in a pull request, try running each role on in clean environment.
-* Be sure to include your respective changes in the related role description.
-
 ---
-Copyright (c) 2017 John Nolette Licensed under the MIT license.
+Copyright (c) 2018 John Nolette Licensed under the MIT license.

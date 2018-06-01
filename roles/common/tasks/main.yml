@@ -33,11 +33,6 @@
     name: redshift-gtk
     state: present
 
-- name: Install plank for app dock
-  apt:
-    name: plank
-    state: present
-
 - name: Install curl cli
   apt:
     name: curl
