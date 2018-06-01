@@ -13,17 +13,8 @@
     rm -rf tv.deb
   when: teamviewer_check.rc == 1
 
-- name: Check Slack installed
-  shell: which slack
-  register: slack_check
-  ignore_errors: True
-
 - name: Install Slack
-  shell: |
-    wget -O slack.deb https://downloads.slack-edge.com/linux_releases/slack-desktop-2.8.2-amd64.deb
-    dpkg --install slack.deb
-    rm -rf slack.deb
-  when: slack_check.rc == 1
+  shell: snap install slack --classic
 
 - name: Install Gitter
   shell: snap install gitter-desktop

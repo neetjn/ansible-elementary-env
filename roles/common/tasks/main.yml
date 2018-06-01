@@ -89,7 +89,8 @@
     version: master
 
 - name: Copy dotfiles
-  synchronize:
-    src: /tmp/dotfiles
-    dest: "{{home_directory}}"
-    recursive: true
+  shell: |
+    chown -R john /tmp/dotfiles/
+    cp -r /tmp/dotfiles/* "{{home_directory}}"
+    cp -r /tmp/dotfiles/.* "{{home_directory}}"
+  ignore_errors: yes
