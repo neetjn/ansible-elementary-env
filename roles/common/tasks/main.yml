@@ -3,6 +3,11 @@
     name: build-essential
     state: present
 
+- name: Install software properties common
+  apt:
+    name: software-properties-common
+    state: present
+
 - name: Intall nano terminal editor
   apt:
     name: nano
@@ -118,3 +123,14 @@
     wget -q -O - http://archive.getdeb.net/getdeb-archive.key | sudo apt-key add -
     sh -c 'echo "deb http://archive.getdeb.net/ubuntu zesty-getdeb apps" >> /etc/apt/sources.list.d/getdeb.list'
     apt-get update
+
+- name: Add elementarytweaks ppa
+  apt_repository:
+    validate_certs: no
+    repo: ppa:philip.scott/elementary-tweaks
+    state: present
+
+- name: Install elementary tweaks
+  apt:
+    name: elementary-tweaks
+    state: present
