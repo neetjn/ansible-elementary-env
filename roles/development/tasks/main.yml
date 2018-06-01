@@ -9,6 +9,11 @@
   become: False
   when: git_ssh_key_exists.stat.exists == False
 
+- name: Install pip python package manager
+  apt:
+    name: python-pip
+    state: present
+
 - name: Install Python development libs
   apt:
     name: python-dev
@@ -52,14 +57,9 @@
     version: 1.9.0
     state: present
 
-- name: Install Twine
-  pip:
-    name: twine
-    state: present
-
-- name: Install Sphinx
-  pip:
-    name: sphinx
+- name: Install npm
+  apt:
+    name: npm
     state: present
 
 - name: Install n node.js version manager
@@ -69,7 +69,7 @@
     state: present
 
 - name: Install node.js 8 stable
-  shell: n 8
+  shell: n latest
 
 - name: Install coffee-script
   npm:
@@ -111,18 +111,8 @@
     rm -rf /tmp/compass.deb
   when: compass_check.rc == 1
 
-  # check if sqlectron installed
-- name: Check sqlectron Installed
-  shell: which sqlectron
-  register: sqlectron_check
-  ignore_errors: True
-
-- name: Install sqlectron
-  shell: |
-    wget -O /tmp/sqlectron.deb https://github.com/sqlectron/sqlectron-gui/releases/download/v1.29.0/Sqlectron_1.29.0_amd64.deb
-    dpkg --install /tmp/sqlectron.deb
-    rm -rf /tmp/sqlectron.deb
-  when: sqlectron_check.rc == 1
+- name: Install datagrip
+  shell: snap install datagrip --classic
 
 # check if vscode installed
 - name: Check VSCode Installed

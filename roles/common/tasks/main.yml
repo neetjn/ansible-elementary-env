@@ -13,11 +13,6 @@
     name: gedit
     state: present
 
-- name: Intall file-roller archive manager
-  apt:
-    name: file-roller
-    state: present
-    
 - name: Install vlc media player
   apt:
     name: vlc
@@ -43,11 +38,6 @@
     name: curl
     state: present
 
-- name: Install pip python package manager
-  apt:
-    name: python-pip
-    state: present
-
 - name: Install bash completion
   apt:
     name: bash-completion
@@ -65,3 +55,38 @@
     curl -s https://packagecloud.io/install/repositories/gyazo/gyazo-for-linux/script.deb.sh | sudo bash
     apt-get install gyazo -y
   when: gyazo_check.rc == 1
+
+- name: Install snapd
+  apt:
+    name: snapd
+    state: present
+
+- name: Install i3
+  apt:
+    name: i3
+    state: present
+
+- name: Install nitogren
+  apt:
+    name: nitrogen
+    state: present
+
+- name: Install zsh
+  apt:
+    name: zsh
+    state: present
+
+- name: Install oh-my-zsh
+  shell: sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+
+- name: Clone dotfiles
+  git:
+    repo: https://github.com/neetjn/dotfiles.git
+    dest: /tmp/dotfiles
+    version: master
+
+- name: Copy dotfiles
+  synchronize:
+    src: /tmp/dotfiles
+    dest: "{{home_directory}}"
+    owner: "{{host_username}}"
