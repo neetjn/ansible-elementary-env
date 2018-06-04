@@ -61,9 +61,9 @@ Playbook inventory variables can be found in `group_vars/all.yml`.
 ## Use
 
 ```sh
-git clone https://github.com/neetjn/ansible-plays-john.git
+git clone https://github.com/neetjn/ansible-plays-elementary.git
 
-cd ansible-plays-john
+cd ansible-plays-elementary
 
 ansible-playbook playbook.yml
 ```
