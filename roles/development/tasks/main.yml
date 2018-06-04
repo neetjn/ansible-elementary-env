@@ -104,6 +104,11 @@
     name: ruby-dev
     state: present
 
+- name: Install rails
+  apt:
+    name: rails
+    state: present
+
 - name: Install travis-cli
   gem:
     name: travis-cli
