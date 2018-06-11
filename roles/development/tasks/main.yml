@@ -139,6 +139,7 @@
     apm install python-tools@0.6.9
     apm install riot-tag@1.1.1
     apm install todo-show@2.3.0
+    apm install duotone-dark-sky-syntax
 
 - name: Install Code
   apt:
