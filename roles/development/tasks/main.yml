@@ -129,7 +129,6 @@
     apm install aurora-theme@1.2.2
     apm install autocomplete-python@1.10.5
     apm install blame@1.0.1
-    apm install city-lights-icons@1.1.1
     apm install language-javascript-jsx@0.3.7
     apm install material@2.2.0
     apm install material-palenight-syntax@1.5.7
@@ -140,6 +139,7 @@
     apm install riot-tag@1.1.1
     apm install todo-show@2.3.0
     apm install duotone-dark-sky-syntax
+    apm install file-icons@2.1.10
 
 - name: Install Code
   apt:
