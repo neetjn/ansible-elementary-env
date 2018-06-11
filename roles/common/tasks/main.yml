@@ -83,6 +83,11 @@
   apt:
     name: pavucontrol
     state: present
+    
+- name: Install tmux
+  apt:
+    name: tmux
+    state: present
 
 - name: Install zsh
   apt:
