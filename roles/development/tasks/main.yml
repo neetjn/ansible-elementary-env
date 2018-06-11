@@ -118,7 +118,7 @@
   shell: snap install datagrip --classic
   
 - name: Install Atom
-  shell: snap install atom
+  shell: snap install atom --classic
   
 - name: Install Atom Extensions
   shell: |
@@ -141,6 +141,8 @@
     apm install duotone-dark-sky-syntax
     apm install file-icons@2.1.10
     apm install editorconfig
+  become: False
+  ignore_errors: True
 
 - name: Install Code
   apt:
