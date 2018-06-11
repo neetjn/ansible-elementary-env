@@ -17,6 +17,7 @@ The playbook has been broken up into four individual role groups:
 * Install redshift.
 * Install snapd.
 * Install i3 environment (with i3blocks).
+* Install tmux.
 * Install nitrogen.
 * Install elementary tweaks.
 
