@@ -141,6 +141,7 @@
     apm install duotone-dark-sky-syntax
     apm install file-icons@2.1.10
     apm install editorconfig
+    apm install highlight-selected
   become: False
   ignore_errors: True
 
