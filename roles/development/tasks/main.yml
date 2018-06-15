@@ -142,6 +142,8 @@
     apm install file-icons@2.1.10
     apm install editorconfig
     apm install highlight-selected
+    apm install atom-ide-ui
+    apm install ide-python
   become: False
   ignore_errors: True
 
