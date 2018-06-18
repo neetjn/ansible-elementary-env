@@ -207,3 +207,13 @@
     apt-vim install -y https://github.com/vim-python/python-syntax.git
     apt-vim install -y https://github.com/nvie/vim-flake8.git
   become: False
+  
+- name: Install pep8
+  pip:
+    name: pep8
+    state: present
+    
+- name: Install flake8
+  pip:
+    name: flake8
+    state: present
