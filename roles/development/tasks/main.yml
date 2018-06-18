@@ -207,6 +207,7 @@
     apt-vim install -y https://github.com/vim-python/python-syntax.git
     apt-vim install -y https://github.com/nvie/vim-flake8.git
     apt-vim install -y https://github.com/Valloric/YouCompleteMe.git
+    apt-vim install -y https://github.com/editorconfig/editorconfig-vim.git
   become: False
   
 - name: Install pep8
