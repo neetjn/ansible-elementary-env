@@ -191,3 +191,18 @@
     code --install-extension yahya-gilany.vscode-pomodoro
   become: False
   ignore_errors: True
+  
+- name: Install vim
+  apt:
+    name: vim
+    state: present
+    
+- name: Install apt-vim
+  shell: curl -sL https://raw.githubusercontent.com/egalpin/apt-vim/master/install.sh | sh
+  become: False
+  
+- name: Install vim plugins
+  shell: |
+    apt-vim install -y https://github.com/scrooloose/nerdtree.git
+    apt-vim install -y https://github.com/vim-python/python-syntax.git
+    apt-vim install -y https://github.com/nvie/vim-flake8.git
