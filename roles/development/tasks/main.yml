@@ -218,4 +218,10 @@
     apt-vim install -y https://github.com/nvie/vim-flake8.git
     apt-vim install -y https://github.com/Valloric/YouCompleteMe.git
     apt-vim install -y https://github.com/editorconfig/editorconfig-vim.git
+    apt-vim install -y https://github.com/ryym/vim-riot.git
+    apt-vim install -y https://github.com/leafgarland/typescript-vim.git
+    apt-vim install -y https://github.com/kchmck/vim-coffee-script.git
+    apt-vim install -y https://github.com/mxw/vim-jsx.git
+    apt-vim install -y https://github.com/pangloss/vim-javascript.git
+    apt-vim install -y https://github.com/posva/vim-vue.git
   become: False
