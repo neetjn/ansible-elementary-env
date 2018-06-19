@@ -117,6 +117,16 @@
 - name: Install datagrip
   shell: snap install datagrip --classic
   
+- name: Install pep8
+  pip:
+    name: pep8
+    state: present
+    
+- name: Install flake8
+  pip:
+    name: flake8
+    state: present
+  
 - name: Install Atom
   shell: snap install atom --classic
   
@@ -209,13 +219,3 @@
     apt-vim install -y https://github.com/Valloric/YouCompleteMe.git
     apt-vim install -y https://github.com/editorconfig/editorconfig-vim.git
   become: False
-  
-- name: Install pep8
-  pip:
-    name: pep8
-    state: present
-    
-- name: Install flake8
-  pip:
-    name: flake8
-    state: present
