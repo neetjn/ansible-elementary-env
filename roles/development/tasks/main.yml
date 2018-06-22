@@ -203,7 +203,13 @@
     code --install-extension ulthes.theme-firewatch
   become: False
   ignore_errors: True
-  
+
+- name: Add vim8 ppa
+  apt_repository:
+    validate_certs: no
+    repo: ppa:jonathonf/vim
+    state: present
+
 - name: Install vim
   apt:
     name: vim
