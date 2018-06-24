@@ -117,6 +117,9 @@
 - name: Install datagrip
   shell: snap install datagrip --classic
   
+- name: Install insomnia rest tool
+  shell: snap install insomnia
+
 - name: Install pep8
   pip:
     name: pep8
