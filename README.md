@@ -24,8 +24,6 @@ The playbook has been broken up into four individual role groups:
 #### Development
 
 * Install aws-cli.
-* install mongodb compass.
-* Install sqlectron.
 * Install docker.
 * Install docker-compose.
 * Install vscode.
@@ -40,6 +38,7 @@ The playbook has been broken up into four individual role groups:
 * Install ruby.
 * Install travis-cli.
 * Install datagrip.
+* Install insomnia rest tool.
 
 #### Aesthetics
 
