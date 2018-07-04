@@ -20,6 +20,8 @@ The playbook has been broken up into four individual role groups:
 * Install tmux.
 * Install nitrogen.
 * Install elementary tweaks.
+* Install fileroller archive manager.
+* Install nautilus file explorer.
 
 #### Development
 
