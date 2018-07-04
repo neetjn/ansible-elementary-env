@@ -139,3 +139,13 @@
   apt:
     name: elementary-tweaks
     state: present
+
+- name: Install nautilus file manager
+  apt:
+    name: nautilus
+    state: present
+    
+- name: Install fileroller archive manager
+  apt:
+    name: fileroller
+    state: present
