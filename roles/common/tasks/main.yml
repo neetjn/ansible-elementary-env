@@ -149,3 +149,8 @@
   apt:
     name: fileroller
     state: present
+
+- name: Install xfce4 settings manager
+  apt:
+    name: xfce4-settings
+    state: present
