@@ -22,6 +22,7 @@ The playbook has been broken up into four individual role groups:
 * Install elementary tweaks.
 * Install fileroller archive manager.
 * Install nautilus file explorer.
+* Install xfce4 settings manager.
 
 #### Development
 
