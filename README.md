@@ -16,6 +16,7 @@ The playbook has been broken up into four individual role groups:
 * Install libreoffice suite.
 * Install redshift.
 * Install snapd.
+* Install elinks.
 * Install i3 environment (with i3blocks).
 * Install tmux.
 * Install nitrogen.
