@@ -64,6 +64,11 @@
 - name: Install Libreoffice
   shell: snap install libreoffice
 
+- name: Install elinks
+  apt:
+    name: elinks
+    state: present
+
 - name: Install i3
   apt:
     name: i3
