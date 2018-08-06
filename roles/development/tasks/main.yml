@@ -8,6 +8,21 @@
     ssh-keygen -t rsa -C "{{git_ssh_key_user}}" -f "{{ssh_directory}}/id_rsa" -N ''
   become: False
   when: git_ssh_key_exists.stat.exists == False
+  
+- name: Increase file watchers
+  lineinfile:
+    path: /etc/sysctl.conf
+    line: 'fs.inotify.max_user_watches=524288'
+    state: present
+    
+- name: Check watchman installed
+  shell: which watchman
+  register: watchman_check
+  ignore_errors: True
+    
+- name: Install watchman
+  shell: curl https://gist.githubusercontent.com/markis/705f101a549f958d62546fb966caae42/raw/609019ffbef8698899e1bf66515baeec32df6c4d/install-watchman-ubuntu.sh | sh
+  when: watchman_check.rc == 1
 
 - name: Add deadsnakes ppa for python utilities
   apt_repository:
