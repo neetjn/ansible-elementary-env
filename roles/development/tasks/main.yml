@@ -228,6 +228,7 @@
     code --install-extension yahya-gilany.vscode-pomodoro
     code --install-extensions primalmotion.primal
     code --install-extension ulthes.theme-firewatch
+    code --install-extension monokai.theme-monokai-pro-vscode
   become: False
   ignore_errors: True
 
