@@ -229,6 +229,7 @@
     code --install-extensions primalmotion.primal
     code --install-extension ulthes.theme-firewatch
     code --install-extension monokai.theme-monokai-pro-vscode
+    code --install-extension teabyii.ayu
   become: False
   ignore_errors: True
 
