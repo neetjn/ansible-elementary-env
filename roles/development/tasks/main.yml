@@ -137,6 +137,9 @@
     name: travis-cli
     state: present
 
+- name: Install Go
+  shell: snap install go --classic
+
 - name: Install datagrip
   shell: snap install datagrip --classic
   
