@@ -159,3 +159,18 @@
   apt:
     name: xfce4-settings
     state: present
+
+- name: Install xfce4 terminal
+  apt:
+    name: xfce4-terminal
+    state: present
+
+- name: Install xterm
+  apt:
+    name: xterm
+    state: present
+
+- name: Install ncurses-term
+  apt:
+    name: ncurses-term
+    state: present
