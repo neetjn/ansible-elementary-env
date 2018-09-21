@@ -234,6 +234,7 @@
     code --install-extension monokai.theme-monokai-pro-vscode
     code --install-extension teabyii.ayu
     code --install-extension nonylene.dark-molokai-theme
+    code --install-extension marvinhagemeister.theme-afterglow-remastered
   become: False
   ignore_errors: True
 
