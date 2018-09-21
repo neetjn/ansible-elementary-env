@@ -233,6 +233,7 @@
     code --install-extension ulthes.theme-firewatch
     code --install-extension monokai.theme-monokai-pro-vscode
     code --install-extension teabyii.ayu
+    code --install-extension nonylene.dark-molokai-theme
   become: False
   ignore_errors: True
 
