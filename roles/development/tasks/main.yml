@@ -276,3 +276,8 @@
     name: editorconfig
     state: present
 
+- name: Install gvim
+  apt:
+    name: vim-gnome
+    state: present
+
