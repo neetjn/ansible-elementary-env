@@ -24,6 +24,8 @@ The playbook has been broken up into four individual role groups:
 * Install fileroller archive manager.
 * Install nautilus file explorer.
 * Install xfce4 settings manager.
+* Install xfce4 terminal.
+* Install xterm.
 
 #### Development
 
@@ -43,6 +45,7 @@ The playbook has been broken up into four individual role groups:
 * Install travis-cli.
 * Install datagrip.
 * Install insomnia rest tool.
+* Install vim and gvim.
 
 #### Aesthetics
 
