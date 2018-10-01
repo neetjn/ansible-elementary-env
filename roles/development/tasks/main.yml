@@ -11,7 +11,7 @@
   
 - name: Increase file watchers
   lineinfile:
-    path: /etc/sysctl.conf
+    dest: /etc/sysctl.conf
     line: 'fs.inotify.max_user_watches=524288'
     state: present
     
