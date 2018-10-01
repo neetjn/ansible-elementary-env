@@ -192,9 +192,7 @@
   ignore_errors: True
 
 - name: Install Code
-  apt:
-    name: code
-    state: present
+  shell: snap install vscode --classic
 
 # will install vscode extensions
 - name: Install Code Extensions
