@@ -51,12 +51,14 @@
     state: present
     
 - name: Install Python 3.7
-  shell: |
-    wget https://www.python.org/ftp/python/3.7.0/Python-3.7.0.tar.xz /tmp/Python-3.7.0.tar.xz
-    tar xvf /tmp/Python-3.7.0.tar.xz
-    ./tmp/Python/Python-3.7.0/configure
-    make -C /tmp/Python/Python-3.7.0 altinstall
-  become: True
+  apt:
+    name: python3.7
+    state: present
+    
+- name: Install Python (3.7) development libs
+  apt:
+    name: python3.7-dev
+    state: present
 
 - name: Install pylint cli and tools
   pip:
