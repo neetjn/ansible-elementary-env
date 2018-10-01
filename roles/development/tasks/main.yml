@@ -263,6 +263,7 @@
   
 - name: Install vim plugins
   shell: |
+    alias apt-vim="{{home_directory}}/apt-vim/apt-vim"
     apt-vim install -y https://github.com/scrooloose/nerdtree.git
     apt-vim install -y https://github.com/vim-python/python-syntax.git
     apt-vim install -y https://github.com/nvie/vim-flake8.git
