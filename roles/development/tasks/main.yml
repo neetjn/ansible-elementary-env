@@ -254,7 +254,11 @@
     state: present
     
 - name: Install apt-vim
-  shell: curl -sL https://raw.githubusercontent.com/egalpin/apt-vim/master/install.sh | sh
+  shell: |
+    curl -sL https://raw.githubusercontent.com/egalpin/apt-vim/master/install.sh | sh
+    chmod +x "{{home_directory}}/apt-vim/apt-vim"
+    cat "{{home_directory}}/.bashrc" | grep apt-vim || echo "alias apt-vim='{{home_directory}}/apt-vim/apt-vim' >> {{home_directory}}/.bashrc"
+    cat "{{home_directory}}/.zshrc" | grep apt-vim || echo "alias apt-vim='{{home_directory}}/apt-vim/apt-vim' >> {{home_directory}}/.zshrc"
   become: False
   
 - name: Install vim plugins
