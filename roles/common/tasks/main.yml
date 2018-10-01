@@ -135,7 +135,7 @@
     
 - name: Install fileroller archive manager
   apt:
-    name: fileroller
+    name: file-roller
     state: present
 
 - name: Install xfce4 settings manager
