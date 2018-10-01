@@ -126,6 +126,7 @@
     chown -R "{{host_username}}" /tmp/dotfiles/
     cp -r /tmp/dotfiles/* "{{home_directory}}"
     cp -r /tmp/dotfiles/.* "{{home_directory}}"
+    rm -rf "{{home_directory}}/.git"
   ignore_errors: yes
 
 - name: Install nautilus file manager
