@@ -20,7 +20,6 @@ The playbook has been broken up into four individual role groups:
 * Install i3 environment (with i3blocks).
 * Install tmux.
 * Install nitrogen.
-* Install elementary tweaks.
 * Install fileroller archive manager.
 * Install nautilus file explorer.
 * Install xfce4 settings manager.
