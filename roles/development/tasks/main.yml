@@ -41,7 +41,7 @@
     state: present
 
 - name: Upgrade pip and pip3
-  shell: pip install --upgrade pip && pip3 install --upgrade pip3
+  shell: pip install --upgrade pip && pip3 install --upgrade pip
 
 - name: Install Python development libs
   apt:
