@@ -134,17 +134,6 @@
     sh -c 'echo "deb http://archive.getdeb.net/ubuntu zesty-getdeb apps" >> /etc/apt/sources.list.d/getdeb.list'
     apt-get update
 
-- name: Add elementarytweaks ppa
-  apt_repository:
-    validate_certs: no
-    repo: ppa:philip.scott/elementary-tweaks
-    state: present
-
-- name: Install elementary tweaks
-  apt:
-    name: elementary-tweaks
-    state: present
-
 - name: Install nautilus file manager
   apt:
     name: nautilus
