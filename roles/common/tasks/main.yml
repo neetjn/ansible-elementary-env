@@ -158,3 +158,8 @@
   apt:
     name: ncurses-term
     state: present
+    
+- name: Install xbacklight
+  apt:
+    name: xbacklight
+    state: present
