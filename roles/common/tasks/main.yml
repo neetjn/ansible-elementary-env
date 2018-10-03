@@ -163,3 +163,8 @@
   apt:
     name: xbacklight
     state: present
+
+- name: Install jq
+  apt:
+    name: jq
+    state: present
