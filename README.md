@@ -25,6 +25,8 @@ The playbook has been broken up into four individual role groups:
 * Install xfce4 settings manager.
 * Install xfce4 terminal.
 * Install xterm.
+* Install xbacklight.
+* Install jq.
 
 #### Development
 
