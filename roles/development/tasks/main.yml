@@ -239,6 +239,7 @@
     code --install-extension nonylene.dark-molokai-theme
     code --install-extension marvinhagemeister.theme-afterglow-remastered
     code --install-extension ms-vscode.theme-1337
+    code --install-extension glennsl.vscode-duotone-dark-faithful
   become: False
   ignore_errors: True
 
