@@ -254,6 +254,11 @@
   apt:
     name: vim
     state: present
+
+- name: Install pathogen for vim
+  shell: |
+    mkdir -p ~/.vim/autoload ~/.vim/bundle
+    curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
     
 - name: Install apt-vim
   shell: |
