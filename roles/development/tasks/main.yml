@@ -241,6 +241,7 @@
     code --install-extension ms-vscode.theme-1337
     code --install-extension glennsl.vscode-duotone-dark-faithful
     code --install-extension ryu1kn.text-marker
+    code --install-extension webreflection.literally-html
   become: False
   ignore_errors: True
 
