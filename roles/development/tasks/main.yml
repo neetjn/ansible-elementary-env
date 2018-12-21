@@ -242,6 +242,7 @@
     code --install-extension glennsl.vscode-duotone-dark-faithful
     code --install-extension ryu1kn.text-marker
     code --install-extension webreflection.literally-html
+    code --install-extesion alefragnani.bookmarks
   become: False
   ignore_errors: True
 
