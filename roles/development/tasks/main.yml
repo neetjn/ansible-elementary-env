@@ -142,6 +142,16 @@
     name: travis-cli
     state: present
 
+- name: Install mycli
+  pip
+    name: mycli
+    state: present
+    
+- name: Install pgcli
+  pip
+    name: pgcli
+    state: present
+
 - name: Install Go
   shell: snap install go --classic
 
