@@ -47,6 +47,7 @@ The playbook has been broken up into four individual role groups:
 * Install datagrip.
 * Install insomnia rest tool.
 * Install vim and gvim.
+* Install mycli and pgcli.
 
 #### Aesthetics
 
