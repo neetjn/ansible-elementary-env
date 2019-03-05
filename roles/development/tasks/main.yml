@@ -154,6 +154,17 @@
 
 - name: Install Go
   shell: snap install go --classic
+  
+- name: Add Dart Keys
+  shell: |
+    sh -c 'curl https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key add -'
+    sh -c 'curl https://storage.googleapis.com/download.dartlang.org/linux/debian/dart_stable.list > /etc/apt/sources.list.d/dart_stable.list'
+    
+- name: Install Dart
+  apt:
+    name: dart
+    state: present
+    update_cache: yes
 
 - name: Install datagrip
   shell: snap install datagrip --classic
