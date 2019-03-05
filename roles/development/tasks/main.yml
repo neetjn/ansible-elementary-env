@@ -266,6 +266,7 @@
     code --install-extesion alefragnani.bookmarks
     code --install-extension kyleerickson.night-rider
     code --install-extension sdras.night-owl
+    code --install-extension dart-code.dart-code
   become: False
   ignore_errors: True
 
