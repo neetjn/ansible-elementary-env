@@ -267,6 +267,7 @@
     code --install-extension kyleerickson.night-rider
     code --install-extension sdras.night-owl
     code --install-extension dart-code.dart-code
+    code --install-extension sbrink.elm
   become: False
   ignore_errors: True
 
