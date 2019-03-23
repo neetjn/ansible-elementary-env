@@ -122,6 +122,12 @@
     global: yes
     state: present
 
+- name: Install firebase tools
+  npm:
+    name: firebase-tools
+    global: yes
+    state: present
+
 - name: Install ruby
   apt:
     name: ruby
