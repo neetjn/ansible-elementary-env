@@ -172,14 +172,19 @@
     state: present
     update_cache: yes
 
-- name: Add Php Keys
+- name: Add php Keys
     shell: LC_ALL=C.UTF-8 add-apt-repository ppa:ondrej/php
 
-- name: Install Php 7.0
+- name: Install php 7.0
   apt:
     name: php7.0
     state: present
     update_cache: yes
+
+- name: Install php 7 ext-zip (for laravel)
+  apt:
+    name: php7.0-zip
+    state: present
 
 - name: Install composer
   shell: curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
