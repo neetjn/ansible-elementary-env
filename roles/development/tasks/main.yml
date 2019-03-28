@@ -181,6 +181,9 @@
     state: present
     update_cache: yes
 
+- name: Install composer
+  shell: curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
+
 - name: Install datagrip
   shell: snap install datagrip --classic
 
