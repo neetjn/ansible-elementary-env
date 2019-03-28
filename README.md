@@ -48,6 +48,7 @@ The playbook has been broken up into four individual role groups:
 * Install insomnia rest tool.
 * Install vim and gvim.
 * Install mycli and pgcli.
+* Install php7 with composer/laravel.
 
 #### Aesthetics
 
