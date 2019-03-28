@@ -186,6 +186,11 @@
     name: php7.1-zip
     state: present
 
+- name: Install php 7.1.* mbstring (for laravel)
+  apt:
+    name: php7.1-mbstring
+    state: present
+
 - name: Install composer
   shell: curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
 
