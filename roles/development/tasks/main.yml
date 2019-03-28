@@ -177,7 +177,7 @@
 
 - name: Install php 7.0
   apt:
-    name: php7.0
+    name: php7.1
     state: present
     update_cache: yes
 
