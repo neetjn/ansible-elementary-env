@@ -8,18 +8,18 @@
     ssh-keygen -t rsa -C "{{git_ssh_key_user}}" -f "{{ssh_directory}}/id_rsa" -N ''
   become: False
   when: git_ssh_key_exists.stat.exists == False
-  
+
 - name: Increase file watchers
   lineinfile:
     dest: /etc/sysctl.conf
     line: 'fs.inotify.max_user_watches=524288'
     state: present
-    
+
 - name: Check watchman installed
   shell: which watchman
   register: watchman_check
   ignore_errors: True
-    
+
 - name: Install watchman
   shell: curl https://gist.githubusercontent.com/markis/705f101a549f958d62546fb966caae42/raw/609019ffbef8698899e1bf66515baeec32df6c4d/install-watchman-ubuntu.sh | sh
   when: watchman_check.rc == 1
@@ -52,12 +52,12 @@
   apt:
     name: python3.6-dev
     state: present
-    
+
 - name: Install Python 3.7
   apt:
     name: python3.7
     state: present
-    
+
 - name: Install Python (3.7) development libs
   apt:
     name: python3.7-dev
@@ -152,29 +152,38 @@
   pip
     name: mycli
     state: present
-    
+
 - name: Install pgcli
-  pip
+  pip:
     name: pgcli
     state: present
 
 - name: Install Go
   shell: snap install go --classic
-  
+
 - name: Add Dart Keys
   shell: |
     sh -c 'curl https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key add -'
     sh -c 'curl https://storage.googleapis.com/download.dartlang.org/linux/debian/dart_stable.list > /etc/apt/sources.list.d/dart_stable.list'
-    
+
 - name: Install Dart
   apt:
     name: dart
     state: present
     update_cache: yes
 
+- name: Add Php Keys
+    shell: LC_ALL=C.UTF-8 add-apt-repository ppa:ondrej/php
+
+- name: Install Php 7.0
+  apt:
+    name: php7.0
+    state: present
+    update_cache: yes
+
 - name: Install datagrip
   shell: snap install datagrip --classic
-  
+
 - name: Install insomnia rest tool
   shell: snap install insomnia
 
@@ -182,15 +191,15 @@
   pip:
     name: pep8
     state: present
-    
+
 - name: Install flake8
   pip:
     name: flake8
     state: present
-  
+
 - name: Install Atom
   shell: snap install atom --classic
-  
+
 - name: Install Atom Extensions
   shell: |
     apm install atom-clock@0.1.16
@@ -292,7 +301,7 @@
   shell: |
     mkdir -p ~/.vim/autoload ~/.vim/bundle
     curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
-    
+
 - name: Install apt-vim
   shell: |
     curl -sL https://raw.githubusercontent.com/egalpin/apt-vim/master/install.sh | sh
@@ -300,7 +309,7 @@
     cat "{{home_directory}}/.bashrc" | grep apt-vim || echo "alias apt-vim='{{home_directory}}/apt-vim/apt-vim' >> {{home_directory}}/.bashrc"
     cat "{{home_directory}}/.zshrc" | grep apt-vim || echo "alias apt-vim='{{home_directory}}/apt-vim/apt-vim' >> {{home_directory}}/.zshrc"
   become: False
-  
+
 - name: Install vim plugins
   shell: |
     alias apt-vim="{{home_directory}}/apt-vim/apt-vim"
