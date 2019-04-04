@@ -1,8 +1,8 @@
 # ansible-plays-workspace
 
-Ansible plays to install personal tools required for my workspace, and setup my development environment on Elementary OS.
+Ansible plays for bootstrapping my personal workspace on Elementary OS.
 
-The playbook has been broken up into four individual role groups:
+This playbook has been broken up into four individual role groups:
 
 #### Common
 
@@ -79,4 +79,4 @@ ansible-playbook playbook.yml
 ```
 
 ---
-Copyright (c) 2018 John Nolette Licensed under the MIT license.
+Copyright (c) 2019 John Nolette Licensed under the MIT license.
