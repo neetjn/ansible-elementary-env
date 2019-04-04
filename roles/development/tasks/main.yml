@@ -215,40 +215,9 @@
     name: flake8
     state: present
 
-- name: Install Atom
-  shell: snap install atom --classic
-
-- name: Install Atom Extensions
-  shell: |
-    apm install atom-clock@0.1.16
-    apm install atom-material-syntax@1.0.8
-    apm install atom-material-syntax-dark@1.0.0
-    apm install atom-material-ui@2.1.3
-    apm install aurora-theme@1.2.2
-    apm install autocomplete-python@1.10.5
-    apm install blame@1.0.1
-    apm install language-javascript-jsx@0.3.7
-    apm install material@2.2.0
-    apm install material-palenight-syntax@1.5.7
-    apm install platformio-ide-terminal@2.8.1
-    apm install pristine-ui@1.1.11
-    apm install python-indent@1.1.5
-    apm install python-tools@0.6.9
-    apm install riot-tag@1.1.1
-    apm install todo-show@2.3.0
-    apm install duotone-dark-sky-syntax
-    apm install file-icons@2.1.10
-    apm install editorconfig
-    apm install highlight-selected
-    apm install atom-ide-ui
-    apm install ide-python
-  become: False
-  ignore_errors: True
-
 - name: Install Code
   shell: snap install vscode --classic
 
-# will install vscode extensions
 - name: Install Code Extensions
   shell: |
     code --install-extension ms-python.python
@@ -264,7 +233,6 @@
     code --install-extension eg2.vscode-npm-script
     code --install-extension PKief.material-icon-theme
     code --install-extension formulahendry.terminal
-    code --install-extension gerane.Theme-azure
     code --install-extension hnw.vscode-auto-open-markdown-preview
     code --install-extension jasonnutter.search-node-modules
     code --install-extension liuji-jim.vue
@@ -277,11 +245,8 @@
     code --install-extension Equinusocio.vsc-material-theme
     code --install-extension alireza94.theme-gotham
     code --install-extension raashida.fixthecode-vs
-    code --install-extension gerane.theme-artschool
     code --install-extension lextudio.restructuredtext
     code --install-extension loiane.ts-extension-pack
-    code --install-extension wesbos.theme-cobalt2
-    code --install-extension josef.rouge-theme
     code --install-extension eamodio.gitlens
     code --install-extension formulahendry.auto-close-tag
     code --install-extension wayou.vscode-todo-highlight
@@ -291,14 +256,10 @@
     code --install-extension monokai.theme-monokai-pro-vscode
     code --install-extension teabyii.ayu
     code --install-extension nonylene.dark-molokai-theme
-    code --install-extension marvinhagemeister.theme-afterglow-remastered
     code --install-extension ms-vscode.theme-1337
-    code --install-extension glennsl.vscode-duotone-dark-faithful
     code --install-extension ryu1kn.text-marker
     code --install-extension webreflection.literally-html
     code --install-extesion alefragnani.bookmarks
-    code --install-extension kyleerickson.night-rider
-    code --install-extension sdras.night-owl
     code --install-extension dart-code.dart-code
     code --install-extension sbrink.elm
   become: False
