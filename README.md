@@ -37,6 +37,7 @@ This playbook has been broken up into four individual role groups:
 * Install vscode.
 * Install pylint.
 * Install pip2/pip3.
+* Install Python 3.6/3.7.
 * Install python development tools.
 * Install httpie.
 * Install node.js stable (using n tool).
