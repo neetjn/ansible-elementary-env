@@ -8,7 +8,6 @@ This playbook has been broken up into four individual role groups:
 
 * Install nano (terminal text editor).
 * Install curl (cli http tool).
-* Install httpie (cli http tool).
 * Install gedit (gui text editor).
 * Install vlc media player (media management).
 * Install gyazo screen capture.
@@ -33,25 +32,34 @@ This playbook has been broken up into four individual role groups:
 
 * Install cmake.
 * Install gcc7.
+* Install watchman.
+* Install pip2/pip3.
+* Install Python 3.6 & 3.7.
+* Install python development tools.
+* Install pylint.
+* Install pep8 core.
+* Install httpie (cli http tool).
 * Install aws-cli.
 * Install docker.
 * Install docker-compose.
-* Install vscode.
-* Install pylint.
-* Install pip2/pip3.
-* Install Python 3.6/3.7.
-* Install python development tools.
-* Install httpie.
-* Install node.js stable (using n tool).
+* Install node.js 10 stable (using n tool).
 * Install coffeescript.
 * Install webpack.
+* Install firebase tools.
 * Install ruby.
+* Install ruby dev tools.
+* Install rails.
 * Install travis-cli.
+* Install mycli (interactive mysql cli).
+* Install pgcli (interactive postgres cli).
+* Install Go lang (stable).
+* Install Dart 2.
+* Install php7.
+* Install composer (w/ laravel).
 * Install datagrip.
 * Install insomnia rest tool.
+* Install vscode.
 * Install vim and gvim.
-* Install mycli and pgcli.
-* Install php7 with composer/laravel.
 
 #### Aesthetics
 

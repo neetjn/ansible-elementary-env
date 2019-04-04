@@ -11,7 +11,7 @@
     ssh-keygen -t rsa -C "{{git_ssh_key_user}}" -f "{{ssh_directory}}/id_rsa" -N ''
   become: False
   when: git_ssh_key_exists.stat.exists == False
-  
+
 - name: Install CMake
   apt:
     name: cmake
@@ -79,6 +79,16 @@
     name: pylint
     state: present
 
+- name: Install pep8
+  pip:
+    name: pep8
+    state: present
+
+- name: Install flake8
+  pip:
+    name: flake8
+    state: present
+
 - name: Install httpie cli
   pip:
     name: httpie
@@ -118,7 +128,7 @@
     global: yes
     state: present
 
-- name: Install node.js 8 stable
+- name: Install node.js 10 stable
   shell: n latest
 
 - name: Install coffee-script
@@ -160,7 +170,7 @@
     state: present
 
 - name: Install mycli
-  pip
+  pip:
     name: mycli
     state: present
 
@@ -215,16 +225,6 @@
 
 - name: Install insomnia rest tool
   shell: snap install insomnia
-
-- name: Install pep8
-  pip:
-    name: pep8
-    state: present
-
-- name: Install flake8
-  pip:
-    name: flake8
-    state: present
 
 - name: Install Code
   shell: snap install vscode --classic
