@@ -1,6 +1,6 @@
-# ansible-plays-elementary
+# ansible-plays-workspace
 
-Ansible playbook to install personal tools required for my workspace, and setup my development environment on Elementary OS.
+Ansible plays to install personal tools required for my workspace, and setup my development environment on Elementary OS.
 
 The playbook has been broken up into four individual role groups:
 
