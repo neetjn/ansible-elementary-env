@@ -31,6 +31,8 @@ This playbook has been broken up into four individual role groups:
 
 #### Development
 
+* Install cmake.
+* Install gcc7.
 * Install aws-cli.
 * Install docker.
 * Install docker-compose.
@@ -81,4 +83,5 @@ ansible-playbook playbook.yml
 ```
 
 ---
+
 Copyright (c) 2019 John Nolette Licensed under the MIT license.
