@@ -13,6 +13,7 @@ This playbook has been broken up into four individual role groups:
 * Install vlc media player (media management).
 * Install gyazo screen capture.
 * Install zsh shell.
+* Install bash/zsh completion.
 * Install libreoffice suite.
 * Install redshift.
 * Install snapd.
