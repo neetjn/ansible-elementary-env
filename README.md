@@ -34,7 +34,6 @@ The playbook has been broken up into four individual role groups:
 * Install docker.
 * Install docker-compose.
 * Install vscode.
-* Install atom.
 * Install pylint.
 * Install pip2/pip3.
 * Install python development tools.
