@@ -275,6 +275,7 @@
     code --install-extension sbrink.elm
     code --install-extension twxs.cmake
     code --install-extension vector-of-bool.cmake-tools
+    code --install-extension slb235.vscode-coffeelint
   become: False
   ignore_errors: True
 
