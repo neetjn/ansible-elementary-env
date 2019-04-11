@@ -276,6 +276,7 @@
     code --install-extension twxs.cmake
     code --install-extension vector-of-bool.cmake-tools
     code --install-extension slb235.vscode-coffeelint
+    code --install-extension orta.vscode-jest
   become: False
   ignore_errors: True
 
