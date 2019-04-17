@@ -68,10 +68,7 @@ This playbook has been broken up into four individual role groups:
 
 #### Social
 
-* Install skype client.
-* Install hipchat desktop client.
 * Install slack desktop client.
-* Install gitter desktop client.
 * Install teamviewer.
 
 ## Variables

@@ -1,6 +1,3 @@
-- name: Install Skype
-  shell: snap install skype --classic
-
 - name: Check Teamviewer installed
   shell: which teamviewer
   register: teamviewer_check
@@ -15,6 +12,3 @@
 
 - name: Install Slack
   shell: snap install slack --classic
-
-- name: Install Gitter
-  shell: snap install gitter-desktop
