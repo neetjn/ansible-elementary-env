@@ -229,6 +229,7 @@
 - name: Install Code
   shell: snap install vscode --classic
 
+# assumes script exists - see common tasks for cloning dotfiles
 - name: Install Code Extensions
   shell: sh "{{home_directory}}"/.tools/install-code-extensions.sh
   become: False
@@ -258,6 +259,7 @@
     cat "{{home_directory}}/.zshrc" | grep apt-vim || echo "alias apt-vim='{{home_directory}}/apt-vim/apt-vim' >> {{home_directory}}/.zshrc"
   become: False
 
+# assumes script exists - see common tasks for cloning dotfiles
 - name: Install vim plugins
   shell: |
     apt-vim="{{home_directory}}/apt-vim/apt-vim" sh "{{home_directory}}"/.tools/install-apt-vim-extensions.sh
