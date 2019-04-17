@@ -227,7 +227,7 @@
   shell: snap install insomnia
 
 - name: Install Code
-  shell: snap install vscode --classic
+  shell: snap install code --classic
 
 # assumes script exists - see common tasks for cloning dotfiles
 - name: Install Code Extensions
