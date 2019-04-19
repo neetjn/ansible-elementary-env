@@ -6,7 +6,6 @@ This playbook has been broken up into four individual role groups:
 
 #### Common
 
-* Install nano (terminal text editor).
 * Install curl (cli http tool).
 * Install gedit (gui text editor).
 * Install vlc media player (media management).
