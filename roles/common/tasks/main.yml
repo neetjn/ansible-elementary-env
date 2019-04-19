@@ -8,11 +8,6 @@
     name: software-properties-common
     state: present
 
-- name: Intall nano terminal editor
-  apt:
-    name: nano
-    state: present
-
 - name: Install gedit text editor
   apt:
     name: gedit
