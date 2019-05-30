@@ -163,3 +163,14 @@
   apt:
     name: jq
     state: present
+    
+- name: Add elementary-tweaks ppa
+  apt_repository:
+    validate_certs: no
+    repo: ppa:philip.scott/elementary-tweaks
+    state: present
+
+- name: Install elementary-tweaks
+  apt:
+    name: elementary-tweaks
+    state: present
