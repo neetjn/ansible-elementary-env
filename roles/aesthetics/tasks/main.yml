@@ -7,3 +7,8 @@
   apt:
     name: oranchelo-icon-theme
     state: present
+
+- name: Install Numix GTK
+  apt:
+    name: numix-gtk-theme
+    state: present
