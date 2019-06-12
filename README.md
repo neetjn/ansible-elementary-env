@@ -1,6 +1,6 @@
 # ansible-plays-workspace
 
-Ansible plays for bootstrapping my personal workspace on Elementary OS.
+Ansible plays for bootstrapping my personal workspace on Elementary OS (Loki).
 
 This playbook has been broken up into four individual role groups:
 
