@@ -76,16 +76,6 @@ Playbook inventory variables can be found in `group_vars/all.yml`.
 
     git_ssh_key_user: Label of ssh key generated for git.
 
-## Use
-
-```sh
-git clone https://github.com/neetjn/ansible-plays-elementary.git
-
-cd ansible-plays-elementary
-
-ansible-playbook playbook.yml
-```
-
 ---
 
 Copyright (c) 2019 John Nolette Licensed under the MIT license.
